@@ -1,0 +1,19 @@
+import smtplib
+>>> sender_mail = input("Enter your Gmail : ")
+Enter your Gmail : hardiksinghavi21@gmail.com
+>>> receivers_mail = input("Enter receivers Gmail : ")
+Enter receivers Gmail : hardikpandya3450@gmail.com
+>>> message  = """From: From Person %s
+... To: To Person %s
+... Subject: Sending SMTP e-mail
+... This is a test e-mail message.
+... """%(sender_mail, receivers_mail)
+>>> try:
+...     password = input("Enter your Password : ")
+...     smtpObj = smtplib.SMTP('gmail.com',587)
+...     smtpobj.login(sender_mail,password)
+...     smtpObj.sendmail(sender_mail,receivers_mail,message)
+...     print("Email sent successfully!")
+... except Exception:
+...     print("Error : Unable to send mail")
+...
